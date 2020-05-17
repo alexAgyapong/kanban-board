@@ -1,0 +1,303 @@
+<div id="wrapper">
+  <aside class="p-3" *ngIf="isSidebarVisible">
+    <div class="d-flex justify-content-between mb-3"><a class="text-uppercase">Logo</a>
+      <button type="button" class="close" (click)="hideSidebar()" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div id="issues" class="p-1">
+      <a href="#" role="button"><span>All</span><span>36</span></a>
+      <a href="#" role="button"><span>Assigned to me</span><span>2</span></a>
+      <a href="#" role="button"><span>created by me</span><span>2</span></a>
+      <a href="#" role="button"><span>Archived</span><span>2</span></a>
+      <div class="d-flex flex-column mt-3">
+        <h5>Tags</h5><a href="#" role="button"><span>Bug</span></a>
+        <a href="#" role="button"><span>Feature Request</span></a>
+        <a href="#" role="button"><span>Marketing</span></a>
+        <a href="#" role="button"><span>v2.0</span></a>
+        <a href="#" role="button"><span>Enhancement</span></a>
+        <a href="#" role="button"><span>Design</span></a>
+        <a href="#" role="button"><span><i id="add-tag-icon" class="fas fa-plus mr-2"></i>Tag</span></a>
+      </div>
+    </div>
+  </aside>
+  <main>
+    <header>
+      <nav class="d-flex justify-content-between align-items-center p-2">
+        <div class="d-flex">
+          <button class="btn-aside-menu align-self-start" (click)="toggleSidebar()"><span>
+              <ion-icon size="large" name="menu-outline"></ion-icon>
+            </span></button>
+          <div id="search">
+            <span class="search-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                <path d="M12.9 14.32a8 8 0 111.41-1.41l5.35 5.33-1.42 1.42-5.33-5.34zM8 14A6 6 0 108 2a6 6 0 000 12z" />
+              </svg> </span>
+            <input class="form-control" type="text" id="search-input">
+          </div>
+        </div>
+        <ul class="list-unstyled d-flex justify-content-center ml-2">
+          <li class="mr-2 mt-3"><a href="#"><i class="far fa-bell fa-2x"></i></a></li>
+          <li><a href="#"><img
+                src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=50&h=50&q=60"
+                alt="" class="profile-photo">
+            </a></li>
+        </ul>
+      </nav>
+      <div class="d-flex justify-content-between pl-2">
+        <div class="issues">
+          <h5>All Issues</h5>
+          <span><img
+              src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=50&h=50&q=60"
+              alt="" class="profile-photo"></span>
+          <span class="img-overlap">
+            <img
+              src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=50&h=50&q=60"
+              alt="" class="profile-photo">
+          </span>
+          <span class="img-overlap">
+            <img
+              src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=50&h=50&q=60"
+              alt="" class="profile-photo">
+          </span>
+          <span class="img-overlap">
+            <img
+              src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=50&h=50&q=60"
+              alt="" class="profile-photo">
+          </span>
+        </div>
+        <div class="d-flex align-items-center align-self-end mr-2">
+          <button class="btn-issue"><i class="fas fa-plus mr-2"></i>NEW ISSUE</button>
+        </div>
+      </div>
+      <div class="display-format d-flex align-items-center justify-content-between">
+        <div class="ml-5"><i class="fas fa-bars fa-2x"></i>List</div>
+        <div id="board"><i class="fas fa-grip-horizontal mr-3"></i>Board</div>
+      </div>
+    </header>
+    <section>
+      <div class="column">
+        <h4>Backlog</h4>
+        <div class="issue-card">
+          <div class="issue-description">
+            <span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. At, sed?</span>
+            <span>
+              <img
+                src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=50&h=50&q=60"
+                alt="" class="profile-photo">
+            </span>
+          </div>
+          <div class="issue-date-tag">
+            <span>Sept 14</span>
+            <div class="issue-comment-tag">
+              <span>
+                <ion-icon size="large" name="chatbox-ellipses-outline"></ion-icon>
+              </span>
+              <span class="tag">
+                <svg height="10" width="10">
+                  <circle cx="6" cy="6" r="2" stroke="black" stroke-width="2" fill="black" />
+                </svg>
+                <span class="ml-1">Feature Request</span>
+              </span>
+              <span class="badge">+1</span>
+            </div>
+          </div>
+        </div>
+        <div class="issue-card">
+          <div class="issue-description">
+            <span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. At, sed?</span>
+            <span>
+              <img
+                src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=50&h=50&q=60"
+                alt="" class="profile-photo">
+            </span>
+          </div>
+          <div class="issue-date-tag">
+            <span>Sept 14</span>
+            <div class="issue-comment-tag">
+              <span>
+                <ion-icon size="large" name="chatbox-ellipses-outline"></ion-icon>
+              </span>
+              <span class="tag">
+                <svg height="10" width="10">
+                  <circle cx="6" cy="6" r="2" stroke="black" stroke-width="2" fill="black" />
+                </svg>
+                <span class="ml-1">Feature Request</span>
+              </span>
+              <span class="badge">+1</span>
+            </div>
+          </div>
+        </div>
+        <div class="issue-card">
+          <div class="issue-description">
+            <span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. At, sed?</span>
+            <span>
+              <img
+                src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=50&h=50&q=60"
+                alt="" class="profile-photo">
+            </span>
+          </div>
+          <div class="issue-date-tag">
+            <span>Sept 14</span>
+            <div class="issue-comment-tag">
+              <span>
+                <ion-icon size="large" name="chatbox-ellipses-outline"></ion-icon>
+              </span>
+              <span class="tag">
+                <svg height="10" width="10">
+                  <circle cx="6" cy="6" r="2" stroke="black" stroke-width="2" fill="black" />
+                </svg>
+                <span class="ml-1">Feature Request</span>
+              </span>
+              <span class="badge">+1</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="column">
+        <h3>In Progress</h3>
+        <div class="issue-card">
+          <div class="issue-description">
+            <span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. At, sed?</span>
+            <span>
+              <img
+                src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=50&h=50&q=60"
+                alt="" class="profile-photo">
+            </span>
+          </div>
+          <div class="issue-date-tag">
+            <span>Sept 14</span>
+            <div class="issue-comment-tag">
+              <span><ion-icon size="large" name="chatbox-ellipses-outline"></ion-icon></span>
+              <span class="tag">
+                <svg height="10" width="10">
+                  <circle cx="6" cy="6" r="2" stroke="black" stroke-width="2" fill="black" />
+                </svg>
+               <span class="ml-1">Feature Request</span>
+              </span>
+              <span class="badge">+1</span>
+            </div>
+          </div>
+        </div>
+        <div class="issue-card">
+          <div class="issue-description">
+            <span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. At, sed?</span>
+            <span>
+              <img
+                src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=50&h=50&q=60"
+                alt="" class="profile-photo">
+            </span>
+          </div>
+          <div class="issue-date-tag">
+            <span>Sept 14</span>
+            <div class="issue-comment-tag">
+              <span><ion-icon size="large" name="chatbox-ellipses-outline"></ion-icon></span>
+              <span class="tag">
+                <svg height="10" width="10">
+                  <circle cx="6" cy="6" r="2" stroke="black" stroke-width="2" fill="black" />
+                </svg>
+               <span class="ml-1">Feature Request</span>
+              </span>
+              <span class="badge">+1</span>
+            </div>
+          </div>
+        </div>
+        <div class="issue-card">
+          <div class="issue-description">
+            <span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. At, sed?</span>
+            <span>
+              <img
+                src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=50&h=50&q=60"
+                alt="" class="profile-photo">
+            </span>
+          </div>
+          <div class="issue-date-tag">
+            <span>Sept 14</span>
+            <div class="issue-comment-tag">
+              <span><ion-icon size="large" name="chatbox-ellipses-outline"></ion-icon></span>
+              <span class="tag">
+                <svg height="10" width="10">
+                  <circle cx="6" cy="6" r="2" stroke="black" stroke-width="2" fill="black" />
+                </svg>
+               <span class="ml-1">Feature Request</span>
+              </span>
+              <span class="badge">+1</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="column">
+        <h3>Done</h3>
+        <div class="issue-card">
+          <div class="issue-description">
+            <span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. At, sed?</span>
+            <span>
+              <img
+                src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=50&h=50&q=60"
+                alt="" class="profile-photo">
+            </span>
+          </div>
+          <div class="issue-date-tag">
+            <span>Sept 14</span>
+            <div class="issue-comment-tag">
+              <span><ion-icon size="large" name="chatbox-ellipses-outline"></ion-icon></span>
+              <span class="tag">
+                <svg height="10" width="10">
+                  <circle cx="6" cy="6" r="2" stroke="black" stroke-width="2" fill="black" />
+                </svg>
+               <span class="ml-1">Feature Request</span>
+              </span>
+              <span class="badge">+1</span>
+            </div>
+          </div>
+        </div>
+        <div class="issue-card">
+          <div class="issue-description">
+            <span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. At, sed?</span>
+            <span>
+              <img
+                src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=50&h=50&q=60"
+                alt="" class="profile-photo">
+            </span>
+          </div>
+          <div class="issue-date-tag">
+            <span>Sept 14</span>
+            <div class="issue-comment-tag">
+              <span><ion-icon size="large" name="chatbox-ellipses-outline"></ion-icon></span>
+              <span class="tag">
+                <svg height="10" width="10">
+                  <circle cx="6" cy="6" r="2" stroke="black" stroke-width="2" fill="black" />
+                </svg>
+               <span class="ml-1">Feature Request</span>
+              </span>
+              <span class="badge">+1</span>
+            </div>
+          </div>
+        </div>
+        <div class="issue-card">
+          <div class="issue-description">
+            <span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. At, sed?</span>
+            <span>
+              <img
+                src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=50&h=50&q=60"
+                alt="" class="profile-photo">
+            </span>
+          </div>
+          <div class="issue-date-tag">
+            <span>Sept 14</span>
+            <div class="issue-comment-tag">
+              <span><ion-icon size="large" name="chatbox-ellipses-outline"></ion-icon></span>
+              <span class="tag">
+                <svg height="10" width="10">
+                  <circle cx="6" cy="6" r="2" stroke="black" stroke-width="2" fill="black" />
+                </svg>
+               <span class="ml-1">Feature Request</span>
+              </span>
+              <span class="badge">+1</span>
+            </div>
+          </div>
+        </div>
+      </div> -->
+    </section>
+  </main>
+</div>

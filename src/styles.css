@@ -1,1 +1,226 @@
 /* You can add global styles to this file, and also import other style files */
+
+:root {
+  --dark-gray: hsl(10, 3%, 43%);
+}
+#wrapper {
+  display: grid;
+}
+
+aside {
+  grid-column: 1/2;
+  padding: 1rem;
+  z-index: 32;
+  width: 200px;
+  position: absolute;
+  top: 10;
+  left: 10;
+  background-color: hsl(0, 0%, 94%);
+  animation: slide-in .5s ease forwards;
+  border: 2px solid hsl(202, 97%, 75%);
+}
+
+slide-in {
+  background-color: red;
+  animation: slide-in 1s ease-in forwards;
+}
+
+main {
+  grid-column: 2/3;
+  /* position: relative; */
+}
+
+#issues {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#issues a {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  color: inherit;
+  font-size: 1rem;
+  text-decoration: none;
+  padding: 0.3rem 0;
+  /* font-weight: bold; */
+}
+
+#issues a:active {
+  background-color: hsl(0, 3%, 70%);
+}
+
+.btn-aside-menu {
+  background-color: transparent;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+.btn-aside-menu:focus {
+  outline: none;
+}
+
+#search {
+  position: relative;
+}
+.search-icon {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  z-index: 1;
+}
+
+.search-icon svg {
+  max-width: 20px;
+  max-height: 20px;
+}
+
+#search-input {
+  /* background: url('./assets/images/search.svg') no-repeat;
+  background-position: 5px ;
+  padding: 10px;
+  text-indent: 10px;
+  text-align: left; */
+}
+
+.profile-photo {
+  border-radius: 30px;
+}
+
+.img-overlap {
+  margin-left: -0.8rem;
+}
+
+.fa-bell {
+  color: hsl(10, 3%, 43%);
+}
+.btn-issue .fa-plus {
+  color: white;
+}
+
+.fa-bars {
+  margin-right: 1rem;
+}
+
+#add-tag-icon {
+  width: 25%;
+  color: var(--dark-gray);
+}
+
+section {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  margin-right: 0.5rem;
+  /* overflow-y: auto; */
+}
+
+.btn-issue {
+  background: hsl(30, 3%, 13%);
+  color: white;
+  padding: 0.8rem;
+  border: 1px solid transparent;
+  border-radius: 0.5rem;
+}
+
+.btn-issue:focus{
+  outline: none;
+}
+
+.display-format {
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: hsl(0, 0%, 90%);
+}
+
+#board {
+  background-color: white;
+  padding: 0.2rem 2rem;
+  font-size: 1.2rem;
+}
+
+.column {
+  background-color: hsl(0, 0%, 95%);
+  padding: 0.5rem;
+}
+
+.issue-card {
+  background-color: white;
+  margin: 0.5rem 0;
+}
+
+.issue-description {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0.5rem;
+}
+
+.issue-date-tag {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0.5rem;
+}
+
+.issue-comment-tag,
+.tag {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.tag {
+  background-color: hsl(170, 93%, 95%);
+  text-align: center;
+  padding: 0.2rem 0.5rem;
+  border-radius: 0.2rem;
+  margin: 0 0.5rem;
+}
+
+/* Keyframes */
+@keyframes bg-slide-in {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(100px);
+  }
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateX(-10px);
+  }
+  to {
+    transform: translateX(10px);
+  }
+}
+
+@keyframes slide-out {
+  from {
+    transform: translateX(100px);
+  }
+  to {
+    transform: translateX(-300px);
+  }
+}
+
+/* Break points */
+@media screen and (min-width: 768px) {
+  #wrapper {
+    grid-template-columns: 1fr 3fr;
+  }
+
+  aside {
+    background: url("https://images.unsplash.com/photo-1484821582734-6c6c9f99a672?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3291&q=80https://images.unsplash.com/photo-1547071286-4c6552bbe26b?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=");
+    animation: bg-slide-in 1s 2s ease-in forwards;
+  }
+
+  .btn-aside-menu {
+    display: none;
+  }
+}
