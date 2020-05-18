@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./kanban-board.component.css']
 })
 export class KanbanBoardComponent implements OnInit {
-  isSidebarVisible = false;
+  isSidebarVisible = true;
 
   constructor() { }
 

@@ -2,7 +2,16 @@
 
 :root {
   --dark-gray: hsl(10, 3%, 43%);
+  --border-line: hsl(0, 0%, 83%);
 }
+body {
+  /* margin: 0;
+  padding: 0;
+  width: 90vw;
+  height: 90vh; */
+  /* border: 1px solid transparent; */
+}
+
 #wrapper {
   display: grid;
 }
@@ -16,18 +25,43 @@ aside {
   top: 10;
   left: 10;
   background-color: hsl(0, 0%, 94%);
-  animation: slide-in .5s ease forwards;
+  animation: slide-in 0.5s ease forwards;
   border: 2px solid hsl(202, 97%, 75%);
 }
 
-slide-in {
+.slide-in {
   background-color: red;
   animation: slide-in 1s ease-in forwards;
 }
 
+header{
+  border-bottom: 1px solid var(--border-line);
+  width: 80vw;
+  margin-right: 25vw;
+  margin-left: .5rem;
+}
+
+
+nav{
+  margin-bottom: .1rem;
+  border-bottom: 1px solid var(--border-line);
+}
+
 main {
   grid-column: 2/3;
-  /* position: relative; */
+}
+
+#test{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding:10px;
+  border: 2px ridge purple;
+}
+
+
+#desktop-filters{
+  display: none;
 }
 
 #issues {
@@ -112,7 +146,7 @@ main {
 section {
   display: flex;
   flex-direction: row;
-  justify-content: start;
+  justify-content: flex-start;
   margin-right: 0.5rem;
   /* overflow-y: auto; */
 }
@@ -120,14 +154,34 @@ section {
 .btn-issue {
   background: hsl(30, 3%, 13%);
   color: white;
-  padding: 0.8rem;
+  padding: 0.7rem;
   border: 1px solid transparent;
   border-radius: 0.5rem;
 }
 
-.btn-issue:focus{
+.btn-issue:focus {
   outline: none;
 }
+
+.issues-filter{
+  /* display: flex;
+  align-items: center;
+  justify-content: space-between; */
+  padding: .5rem 0;
+}
+
+#mobile-filters{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid green;
+}
+
+#desktop-filters{
+  display: none;
+}
+
+
 
 .display-format {
   margin-top: 1rem;
@@ -144,11 +198,18 @@ section {
 .column {
   background-color: hsl(0, 0%, 95%);
   padding: 0.5rem;
+  margin-top: .5rem;
+  margin-right: .5rem;
+}
+
+.column:first-child{
+  margin-left: .5rem;
 }
 
 .issue-card {
   background-color: white;
   margin: 0.5rem 0;
+  width: 300px;
 }
 
 .issue-description {
@@ -199,6 +260,14 @@ section {
     transform: translateX(10px);
   }
 }
+@keyframes no-slide-in {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
 
 @keyframes slide-out {
   from {
@@ -216,11 +285,54 @@ section {
   }
 
   aside {
-    background: url("https://images.unsplash.com/photo-1484821582734-6c6c9f99a672?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3291&q=80https://images.unsplash.com/photo-1547071286-4c6552bbe26b?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=");
-    animation: bg-slide-in 1s 2s ease-in forwards;
+    /* background-color: red; */
+    animation: no-slide-in;
+    z-index: 0;
+    position: static;
+    border: none;
+    border-right: 1px solid var(--dark-gray);
+  }
+
+  header{
+    width: 80vw;
+    margin-right: 25vw;
+    margin-left: .5rem;
+  }
+
+ .issues-filter{
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   padding: .5rem 0;
+ }
+
+ .issues-photos{
+   display: flex;
+   align-items: center;
+ }
+
+
+  #mobile-filters{
+    display: none;
+    border: 1px solid blue;
+  }
+
+  #desktop-filters{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .display-format-desktop {
+    padding: .4rem;
+    /* background-color: hsl(0, 0%, 90%); */
   }
 
   .btn-aside-menu {
+    display: none;
+  }
+
+  .close{
     display: none;
   }
 }
